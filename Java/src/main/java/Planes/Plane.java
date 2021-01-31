@@ -3,42 +3,41 @@ package Planes;
 import java.util.Objects;
 
 abstract public class Plane {
-    String model;
-    private int maxSpeed;
-    private int maxFlightDistance;
-    private int maxLoadCapacity;
+    String planeModel;
+    private int maximumSpeed;
+    private int maximumFlightDistance;
+    private int maximumLoadCapacity;
 
-    public Plane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
-        this.model = model;
-        this.maxSpeed = maxSpeed;
-        this.maxFlightDistance = maxFlightDistance;
-        this.maxLoadCapacity = maxLoadCapacity;
+    public Plane(String planeModel, int maximumSpeed, int maximumFlightDistance, int maximumLoadCapacity) {
+        this.planeModel = planeModel;
+        this.maximumSpeed = maximumSpeed;
+        this.maximumFlightDistance = maximumFlightDistance;
+        this.maximumLoadCapacity = maximumLoadCapacity;
     }
 
-    public String getModel() {
-        return model;
+    public String getPlaneModel() {
+        return planeModel;
     }
 
-    public int getMS() {
-        return maxSpeed;
+    public int getMaximumSpeed() {
+        return maximumSpeed;
     }
 
-    public int Get_Max_Flight_Distance() {
-        return maxFlightDistance;
+    public int getMaximumFlightDistance() {
+        return maximumFlightDistance;
     }
 
-    public int getMinLoadCapacity() {
-        int result = this.maxLoadCapacity;
-        return result;
+    public int getMaximumLoadCapacity() {
+        return maximumLoadCapacity;
     }
 
     @Override
     public String toString() {
         return "Plane{" +
-                "model='" + model + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", maxFlightDistance=" + maxFlightDistance +
-                ", maxLoadCapacity=" + maxLoadCapacity +
+                "model='" + planeModel + '\'' +
+                ", maxSpeed=" + maximumSpeed +
+                ", maxFlightDistance=" + maximumFlightDistance +
+                ", maxLoadCapacity=" + maximumLoadCapacity +
                 '}';
     }
 
@@ -47,14 +46,14 @@ abstract public class Plane {
         if (this == o) return true;
         if (!(o instanceof Plane)) return false;
         Plane plane = (Plane) o;
-        return maxSpeed == plane.maxSpeed &&
-                maxFlightDistance == plane.maxFlightDistance &&
-                maxLoadCapacity == plane.maxLoadCapacity &&
-                Objects.equals(model, plane.model);
+        return maximumSpeed == plane.maximumSpeed &&
+                maximumFlightDistance == plane.maximumFlightDistance &&
+                maximumLoadCapacity == plane.maximumLoadCapacity &&
+                Objects.equals(planeModel, plane.planeModel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
+        return Objects.hash(planeModel, maximumSpeed, maximumFlightDistance, maximumLoadCapacity);
     }
 }
